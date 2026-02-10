@@ -467,7 +467,7 @@ export default function Home() {
                 </motion.div>
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
-                <motion.div
+                <div
                   className="feature-decoration"
                   style={{
                     position: 'absolute',
@@ -478,15 +478,7 @@ export default function Home() {
                     background: `radial-gradient(circle, ${feature.color}20, transparent)`,
                     borderRadius: '50%',
                     pointerEvents: 'none',
-                  }}
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.3, 0.6, 0.3],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: i * 0.2,
+                    opacity: 0.5,
                   }}
                 />
               </motion.div>
@@ -545,36 +537,29 @@ export default function Home() {
             ))}
           </motion.div>
 
-          <motion.div
+          <div
             className="cta-section"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
             style={{
               display: 'flex',
               justifyContent: 'center',
               marginTop: '4rem',
               padding: '3rem 2rem',
-              background: 'linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)',
+              background: 'linear-gradient(135deg, rgba(255, 107, 157, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%)',
               borderRadius: '20px',
-              backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255, 107, 157, 0.2)',
-              animation: 'borderGlow 3s ease-in-out infinite',
             }}
           >
-            <motion.a 
+            <a 
               href="/products" 
               className="btn btn-primary btn-lg btn-futuristic"
-              whileHover={{ 
-                scale: 1.1,
-                boxShadow: '0 20px 50px rgba(255, 107, 157, 0.5)',
+              style={{
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
               }}
-              whileTap={{ scale: 0.95 }}
             >
               🎯 Explore Full Collection
-            </motion.a>
-          </motion.div>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -591,22 +576,13 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
           >
-            <motion.div 
+            <div 
               className="about-text" 
-              variants={itemVariants}
-              whileInView={{
-                x: [0, 0],
-                opacity: 1,
-              }}
               style={{
                 paddingRight: '2rem',
               }}
             >
-              <motion.h2
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
+              <h2
                 style={{
                   fontSize: '2.5rem',
                   marginBottom: '1.5rem',
@@ -617,12 +593,8 @@ export default function Home() {
                 }}
               >
                 🍎 About FruitShoppe
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
+              </h2>
+              <p
                 style={{
                   fontSize: '1.1rem',
                   lineHeight: '1.8',
@@ -633,12 +605,8 @@ export default function Home() {
                 Founded in 2024, FruitShoppe is dedicated to bringing the freshest, most
                 delicious fruits directly to your table. We work with local farmers and
                 suppliers to ensure every fruit is of the highest quality.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
+              </p>
+              <p
                 style={{
                   fontSize: '1.1rem',
                   lineHeight: '1.8',
@@ -649,13 +617,9 @@ export default function Home() {
                 Our mission is simple: to make healthy eating convenient, affordable, and
                 delicious. We believe that fresh fruit should be accessible to everyone, and
                 we're committed to making that a reality.
-              </motion.p>
-              <motion.ul 
+              </p>
+              <ul 
                 className="about-list"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
@@ -669,17 +633,8 @@ export default function Home() {
                   '✓ Free Delivery on Orders Over $50',
                   '✓ 30-Day Money Back Guarantee'
                 ].map((item, i) => (
-                  <motion.li
+                  <li
                     key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ 
-                      x: 10,
-                      color: '#FF6B9D',
-                      transition: { duration: 0.2 }
-                    }}
                     style={{
                       fontSize: '1rem',
                       color: 'var(--dark-gray)',
@@ -691,13 +646,12 @@ export default function Home() {
                     }}
                   >
                     {item}
-                  </motion.li>
+                  </li>
                 ))}
-              </motion.ul>
-            </motion.div>
-            <motion.div 
+              </ul>
+            </div>
+            <div 
               className="about-image" 
-              variants={itemVariants}
               role="button"
               tabIndex={0}
               aria-label="View products"
@@ -710,18 +664,8 @@ export default function Home() {
               style={{ position: 'relative', cursor: 'pointer' }}
             >
               {/* Floating doodles around image with enhanced animations */}
-              <motion.div
+              <div
                 className="about-decoration apple"
-                animate={{
-                  y: [0, -15, 0],
-                  rotate: [0, 8, -8, 0],
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
                 style={{
                   position: 'absolute',
                   left: '-50px',
@@ -731,20 +675,9 @@ export default function Home() {
                 }}
               >
                 <AppleShape size={100} />
-              </motion.div>
-              <motion.div
+              </div>
+              <div
                 className="about-decoration watermelon"
-                animate={{
-                  x: [0, 20, 0],
-                  y: [0, -15, 0],
-                  rotate: [0, -5, 5, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  delay: 0.7,
-                  ease: 'easeInOut',
-                }}
                 style={{
                   position: 'absolute',
                   right: '-50px',
@@ -754,20 +687,9 @@ export default function Home() {
                 }}
               >
                 <WatermelonSlice size={110} />
-              </motion.div>
-              <motion.div
+              </div>
+              <div
                 className="about-decoration orange"
-                animate={{
-                  x: [0, -15, 0],
-                  y: [0, 12, 0],
-                  rotate: [0, 5, -5, 0],
-                }}
-                transition={{
-                  duration: 5.5,
-                  repeat: Infinity,
-                  delay: 1.2,
-                  ease: 'easeInOut',
-                }}
                 style={{
                   position: 'absolute',
                   left: '-35px',
@@ -777,28 +699,23 @@ export default function Home() {
                 }}
               >
                 <OrangeShape size={90} />
-              </motion.div>
+              </div>
               
-              {/* Sparkling effects around image */}
-              <SparkleStarShape x={-5} y={10} size={20} delay={0} />
-              <SparkleStarShape x={95} y={15} size={18} delay={1.5} />
-              <SparkleStarShape x={5} y={85} size={22} delay={2.5} />
               
-              <motion.img
+              <img
                 src="https://images.unsplash.com/photo-1616060048857-306f086aa1c2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZnJ1aXQlMjBzaG9wfGVufDB8fDB8fHww"
                 alt="Fresh Fruits"
                 loading="lazy"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 20px 60px rgba(255, 107, 157, 0.3)',
-                }}
-                transition={{ duration: 0.4 }}
                 style={{
                   borderRadius: '20px',
                   overflow: 'hidden',
+                  cursor: 'pointer',
+                  transition: 'transform 0.3s ease',
+                  maxWidth: '100%',
+                  height: 'auto',
                 }}
               />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
