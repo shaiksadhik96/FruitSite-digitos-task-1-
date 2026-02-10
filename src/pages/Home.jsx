@@ -174,30 +174,21 @@ export default function Home() {
               }}
               style={{ cursor: 'pointer' }}
             >
-              {/* Enhanced creative doodles with toy-like elements */}
+              {/* Enhanced creative doodles with toy-like elements - Optimized */}
               <FloatingDot delay={0} x={5} y={10} size={15} color="pink" />
-              <FloatingDot delay={0.3} x={15} y={5} size={10} color="orange" />
               <FloatingDot delay={0.6} x={85} y={15} size={12} color="green" />
-              <FloatingDot delay={0.9} x={75} y={85} size={11} color="blue" />
               <FloatingDot delay={1.2} x={90} y={50} size={9} color="purple" />
-              <FloatingDot delay={1.5} x={10} y={70} size={13} color="pink" />
               
               <RotatingCircle delay={0} x={8} y={18} size={55} color="#FF6B9D" />
-              <RotatingCircle delay={1.5} x={82} y={75} size={40} color="#FFB84D" />
-              <RotatingCircle delay={3} x={12} y={60} size={35} color="#9D50FF" />
 
               {/* Sparkling stars and toy elements */}
               <SparkleStarShape x={2} y={5} size={25} delay={0} />
-              <SparkleStarShape x={88} y={8} size={22} delay={1} />
-              <SparkleStarShape x={5} y={80} size={20} delay={2} />
               <SparkleStarShape x={92} y={88} size={28} delay={1.5} />
 
               <ToyHeart x={18} y={12} size={20} delay={0.5} />
-              <ToyHeart x={80} y={18} size={18} delay={1.8} />
 
               <BouncingBall x={8} y={45} size={16} color="#FF6B9D" delay={0} />
               <BouncingBall x={88} y={40} size={14} color="#4ECDC4" delay={0.8} />
-              <BouncingBall x={15} y={88} size={15} color="#FFD93D" delay={1.5} />
 
               {/* Main hero fruit - Premium Apple with futuristic effects */}
               <motion.div
@@ -217,12 +208,12 @@ export default function Home() {
                   perspective: '1200px',
                 }}
               >
-                {/* Holographic glow layers */}
+                {/* Holographic glow layers - Optimized */}
                 <motion.div
                   className="holographic-glow holographic-glow-1"
                   animate={{
-                    opacity: [0.3, 0.8, 0.3],
-                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.6, 0.3],
+                    scale: [1, 1.15, 1],
                   }}
                   transition={{
                     duration: 3,
@@ -236,10 +227,11 @@ export default function Home() {
                     transform: 'translate(-50%, -50%)',
                     width: '400px',
                     height: '400px',
-                    background: 'radial-gradient(circle, rgba(255, 107, 157, 0.6) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(255, 107, 157, 0.5) 0%, transparent 70%)',
                     borderRadius: '50%',
-                    filter: 'blur(40px)',
+                    filter: 'blur(20px)',
                     zIndex: -1,
+                    willChange: 'opacity, transform',
                   }}
                 />
                 
@@ -247,8 +239,8 @@ export default function Home() {
                 <motion.div
                   className="holographic-glow holographic-glow-2"
                   animate={{
-                    opacity: [0.2, 0.6, 0.2],
-                    scale: [0.8, 1.1, 0.8],
+                    opacity: [0.2, 0.5, 0.2],
+                    scale: [0.9, 1.1, 0.9],
                   }}
                   transition={{
                     duration: 4,
@@ -263,14 +255,15 @@ export default function Home() {
                     transform: 'translate(-50%, -50%)',
                     width: '450px',
                     height: '450px',
-                    background: 'radial-gradient(circle, rgba(118, 75, 162, 0.4) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(118, 75, 162, 0.35) 0%, transparent 70%)',
                     borderRadius: '50%',
-                    filter: 'blur(50px)',
+                    filter: 'blur(25px)',
                     zIndex: -2,
+                    willChange: 'opacity, transform',
                   }}
                 />
 
-                {/* Rotating particle rings */}
+                {/* Rotating particle ring - Optimized (single ring) */}
                 <motion.div
                   className="particle-ring"
                   animate={{ rotate: 360 }}
@@ -289,42 +282,16 @@ export default function Home() {
                     border: '2px solid rgba(255, 107, 157, 0.2)',
                     borderRadius: '50%',
                     zIndex: 5,
+                    willChange: 'transform',
                   }}
                 />
 
-                {/* Second rotating ring (counter-rotation) */}
-                <motion.div
-                  className="particle-ring-2"
-                  animate={{ rotate: -360 }}
-                  transition={{
-                    duration: 30,
-                    repeat: Infinity,
-                    ease: 'linear',
-                  }}
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: '380px',
-                    height: '380px',
-                    border: '1px solid rgba(118, 75, 162, 0.15)',
-                    borderRadius: '50%',
-                    zIndex: 4,
-                  }}
-                />
-
-                {/* Main fruit - Real mixed fruits image with impressive effects */}
+                {/* Main fruit - Real mixed fruits image with optimized effects */}
                 <motion.img
                   src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=800&fit=crop&q=90"
                   alt="Premium Fresh Fruits Collection"
                   animate={{
-                    scale: [1, 1.08, 1],
-                    filter: [
-                      'drop-shadow(0 15px 40px rgba(255, 107, 157, 0.5)) drop-shadow(0 0 30px rgba(255, 107, 157, 0.3)) brightness(1.1) contrast(1.1)',
-                      'drop-shadow(0 25px 60px rgba(255, 107, 157, 0.8)) drop-shadow(0 0 50px rgba(255, 107, 157, 0.6)) brightness(1.15) contrast(1.2)',
-                      'drop-shadow(0 15px 40px rgba(255, 107, 157, 0.5)) drop-shadow(0 0 30px rgba(255, 107, 157, 0.3)) brightness(1.1) contrast(1.1)',
-                    ],
+                    scale: [1, 1.05, 1],
                   }}
                   transition={{
                     duration: 3.5,
@@ -340,48 +307,50 @@ export default function Home() {
                     borderRadius: '30px',
                     border: '4px solid rgba(255, 107, 157, 0.3)',
                     boxShadow: '0 0 50px rgba(255, 107, 157, 0.5), inset 0 0 40px rgba(255, 107, 157, 0.2), 0 20px 60px rgba(255, 107, 157, 0.4)',
+                    filter: 'drop-shadow(0 15px 40px rgba(255, 107, 157, 0.5)) brightness(1.1)',
+                    willChange: 'transform',
                   }}
                 />
 
-                {/* Floating sparkles around the fruit */}
-                {[...Array(8)].map((_, i) => (
+                {/* Simplified sparkles - Optimized (removed heavy array animation) */}
+                {[0, 2, 4, 6].map((i) => (
                   <motion.div
                     key={`sparkle-${i}`}
                     animate={{
                       x: [
-                        Math.cos((i / 8) * Math.PI * 2) * 150,
+                        Math.cos((i / 8) * Math.PI * 2) * 160,
                         Math.cos((i / 8) * Math.PI * 2) * 180,
-                        Math.cos((i / 8) * Math.PI * 2) * 150,
+                        Math.cos((i / 8) * Math.PI * 2) * 160,
                       ],
                       y: [
-                        Math.sin((i / 8) * Math.PI * 2) * 150,
+                        Math.sin((i / 8) * Math.PI * 2) * 160,
                         Math.sin((i / 8) * Math.PI * 2) * 180,
-                        Math.sin((i / 8) * Math.PI * 2) * 150,
+                        Math.sin((i / 8) * Math.PI * 2) * 160,
                       ],
-                      opacity: [0, 1, 0],
-                      scale: [0.5, 1.5, 0.5],
+                      opacity: [0, 0.8, 0],
                     }}
                     transition={{
                       duration: 4,
                       repeat: Infinity,
-                      delay: i * 0.3,
+                      delay: i * 0.5,
                       ease: 'easeInOut',
                     }}
                     style={{
                       position: 'absolute',
                       top: '50%',
                       left: '50%',
-                      width: '8px',
-                      height: '8px',
+                      width: '6px',
+                      height: '6px',
                       background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent)',
                       borderRadius: '50%',
                       zIndex: 3,
+                      willChange: 'transform, opacity',
                     }}
                   />
                 ))}
               </motion.div>
 
-              {/* Surrounding fruit elements for dynamic composition */}
+              {/* Surrounding fruit elements - Optimized (reduced to 2) */}
               <motion.div
                 className="floating-orange"
                 animate={{
@@ -399,31 +368,10 @@ export default function Home() {
                   right: '8%',
                   top: '15%',
                   width: '120px',
+                  willChange: 'transform',
                 }}
               >
                 <OrangeShape size={120} />
-              </motion.div>
-
-              <motion.div
-                className="floating-apple"
-                animate={{
-                  x: [0, -15, 0],
-                  y: [0, 12, 0],
-                  rotate: [0, -4, 0],
-                }}
-                transition={{
-                  duration: 5.5,
-                  repeat: Infinity,
-                  delay: 1,
-                }}
-                style={{
-                  position: 'absolute',
-                  left: '5%',
-                  bottom: '20%',
-                  width: '100px',
-                }}
-              >
-                <AppleShape size={100} />
               </motion.div>
 
               <motion.div
@@ -443,6 +391,7 @@ export default function Home() {
                   right: '12%',
                   bottom: '25%',
                   width: '110px',
+                  willChange: 'transform',
                 }}
               >
                 <BananaShape size={110} />
