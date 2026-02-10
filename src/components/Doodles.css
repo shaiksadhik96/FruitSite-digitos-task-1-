@@ -1,0 +1,199 @@
+/**
+ * Doodle and Decorative Elements Styles - Enhanced
+ */
+
+.floating-dot {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+}
+
+.floating-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(243, 156, 18, 0.3), transparent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(243, 156, 18, 0);
+  }
+}
+
+.rotating-circle {
+  position: absolute;
+  border: 3px solid;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+  border-style: dashed;
+}
+
+.rotating-circle::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  border-radius: 50%;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px currentColor;
+}
+
+.decorative-line {
+  pointer-events: none;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* Enhanced fruit shapes styling */
+.mango-shape,
+.strawberry-shape,
+.watermelon-shape,
+.banana-shape,
+.apple-shape,
+.orange-shape {
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.2));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.mango-shape:hover,
+.strawberry-shape:hover,
+.watermelon-shape:hover,
+.banana-shape:hover,
+.apple-shape:hover,
+.orange-shape:hover {
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+/* Decorative container for floating elements */
+.doodle-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.doodle-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.doodle-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animated doodle lines */
+.doodle-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, var(--primary-orange), transparent);
+  pointer-events: none;
+}
+
+.doodle-line--horizontal {
+  height: 2px;
+  width: 100%;
+  top: 50%;
+}
+
+.doodle-line--vertical {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+}
+
+/* Floating animation variant */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px) translateX(10px);
+    opacity: 0;
+  }
+}
+
+.float-animation {
+  animation: floatUp 3s ease-in-out infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.bounce-animation {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Spin animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-animation {
+  animation: spin 4s linear infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.shimmer-effect {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Responsive sizes */
+@media (max-width: 768px) {
+  .mango-shape,
+  .strawberry-shape,
+  .watermelon-shape,
+  .banana-shape,
+  .apple-shape {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .mango-shape,
+  .strawberry-shape,
+  .watermelon-shape,
+  .banana-shape,
+  .apple-shape {
+    max-width: 80%;
+  }
+}

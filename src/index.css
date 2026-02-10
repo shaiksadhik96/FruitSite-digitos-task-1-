@@ -1,0 +1,29 @@
+/**
+ * Basic index.css - minimal reset
+ * Global styles are in global.css
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="%23FF6B9D" opacity="0.3"/><circle cx="12" cy="12" r="6" fill="%23FF6B9D"/><circle cx="12" cy="12" r="2" fill="white"/></svg>') 12 12, auto;
+}
+
+a, button, .btn, .nav-link, [role="button"] {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="%23FFB84D" opacity="0.4"/><circle cx="14" cy="14" r="8" fill="%23FFB84D"/><circle cx="14" cy="14" r="3" fill="white"/><path d="M14 6 L14 10 M14 18 L14 22 M6 14 L10 14 M18 14 L22 14" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>') 14 14, pointer;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
